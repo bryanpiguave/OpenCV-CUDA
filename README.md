@@ -4,18 +4,15 @@ How to copile OPENCV to use CUDA within a DOCKER image
 In order to compile opencv to use cuda we need to understand first how do C++ build process works:
 
 ### Build Process (create an executable file)
-- Preprocessing
-  input: C++ source code
-  output: file.ii
-  The preprocessor does many things: macro replacements, check for conditional compilation, insert contet whenever a header file is being included. Only source files are passed to the preprocessor.
-- Compiler (GCC: GNU COMPILER COLLECTION)
-  input: file.ii (preprocessed file)
-  output (low level language): assembly code/file --> file.s
-  Transforms the high level programming language to a low level one.
-- Assembler
-  input: assembly code/file --> file.s
-  output: object code --> file.obj / file.o
-  Machine code representation of your source code.
+- **Preprocessing**: The preprocessor does many things: macro replacements, check for conditional compilation, insert contet whenever a header file is being included. Only source files are passed to the preprocessor.
+	- *input*: C++ source code
+  	- *output*: file.ii
+- **Compiler (GCC: GNU COMPILER COLLECTION)**: Transforms the high level programming language to a low level one.
+	- *input*: file.ii (preprocessed file)
+	- *output (low level language)*: assembly code/file --> file.s
+- **Assembler**: Machine code representation of your source code.
+  	- *input*: assembly code/file --> file.s
+  	- *output*: object code --> file.obj / file.o
 - Linker
   input: object code --> file.obj / file.o
   output: file.exe 
