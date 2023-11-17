@@ -43,8 +43,8 @@ Now, we can proceed to compile the openCV source code in order for it to make so
    		- Change the python folder path PYTHON_EXECUTABLE
 		- Change the cuda folder path CUDA_TOOLKIT_ROOT_DIR
 		- Change the opencv contrib modules OPENCV_EXTRA_MODULES_PATH
-		- Finally there are some parameters that can be modified to your convenience. Please check the [docs](https://docs.opencv.org/4.x/db/d05/tutorial_config_reference.html) to analyze what is best for your project.<br>
-Example of a cmake command:<br>
+		- Finally there are some parameters that can be modified to your convenience. Please check the [docs](https://docs.opencv.org/4.x/db/d05/tutorial_config_reference.html) to analyze what is best for your project.<br><br>
+**Example of a cmake command:** <br>
 cmake -D CMAKE_BUILD_TYPE=Release -D BUILD_PNG=OFF -D BUILD_TIFF=OFF -D BUILD_TBB=OFF -D BUILD_JPEG=OFF -D BUILD_JASPER=OFF -D BUILD_ZLIB=OFF -D BUILD_EXAMPLES=OFF -D BUILD_opencv_java=OFF -D BUILD_opencv_python2=OFF -D BUILD_opencv_python3=ON -D ENABLE_NEON=ON -D WITH_OPENCL=OFF -D WITH_OPENMP=OFF -D WITH_FFMPEG=ON -D WITH_GSTREAMER=OFF -D WITH_GSTREAMER_0_10=OFF -D WITH_CUDA=ON -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -D WITH_GTK=ON -D WITH_VTK=OFF -D WITH_TBB=ON -D WITH_1394=OFF -D WITH_OPENEXR=OFF -D CUDA_ARCH_BIN=7.5 -D CUDA_ARCH_PTX="" -D INSTALL_C_EXAMPLES=OFF -D INSTALL_TESTS=OFF -D WITH_CUDNN=ON -D OPENCV_DNN_CUDA=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D PYTHON_EXECUTABLE=/usr/bin/python3 -D WITH_CUBLAS=1 -D OPENCV_EXTRA_MODULES_PATH=/main/opencv_contrib/modules ..
 	- Run *make install*
 7. If everything went well now you should have a docker image with cuda, cudnn and opencv ready to use cuda! Now, you can exit the container without killing it (Ctrl+p, Ctrl+q) and save a docker image based on that container *docker commit  -m "cudaxx-cudnxx-opencvx.x" <container id>  cudaxx-cudnnxx-opencvx.x:1*
