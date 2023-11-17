@@ -4,7 +4,7 @@ How to copile OPENCV to use CUDA within a DOCKER image
 In order to compile opencv to use cuda we need to understand first how do C++ build process works:
 
 ### Build Process (create an executable file)
-- **Preprocessing**: The preprocessor does many things: macro replacements, check for conditional compilation, insert contet whenever a header file is being included. Only source files are passed to the preprocessor.
+- **Preprocessing**: The preprocessor does many things: macro replacements, check for conditional compilation, insert content whenever a header file is being included. Only source files are passed to the preprocessor.
 	- *input*: C++ source code
   	- *output*: file.ii
 - **Compiler (GCC: GNU COMPILER COLLECTION)**: Transforms the high level programming language to a low level one.
@@ -18,7 +18,7 @@ In order to compile opencv to use cuda we need to understand first how do C++ bu
 	- *output*: file.exe 
 
 ## Generate Docker image with compiled OpenCV to use CUDA
-Now, we can proceed to compile the openCV source code in order for it to make some processes directly in a GPU.
+Now, we can proceed to compile the OpenCV source code in order for it to make some processes directly in a GPU.
 
 1. You need to create a folder to clone de opencv and opencv-contrib repositories there (if their latest versions are too recent, I would suggest to try with the second to last)
 2. Find out which nvidia docker image you have to use. In order to do that you have to check which GPU you have.
