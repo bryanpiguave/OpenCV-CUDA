@@ -13,10 +13,9 @@ In order to compile opencv to use cuda we need to understand first how do C++ bu
 - **Assembler**: Machine code representation of your source code.
   	- *input*: assembly code/file --> file.s
   	- *output*: object code --> file.obj / file.o
-- Linker
-  input: object code --> file.obj / file.o
-  output: file.exe 
-  Link the Standard and External libraries and generate the executable file.
+- **Linker**: Link the Standard and External libraries and generate the executable file.
+	- *input*: object code --> file.obj / file.o
+	- *output*: file.exe 
 
 ## Generate Docker image with compiled OpenCV to use CUDA
 Now, we can proceed to compile the openCV source code in order for it to make some processes directly in a GPU.
