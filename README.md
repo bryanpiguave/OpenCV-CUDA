@@ -36,9 +36,9 @@ Now, we can proceed to compile the openCV source code in order for it to make so
 	- update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 	- update-alternatives --config python3
 - Build Opencv:
-        - Go to the opencv folder (cd path/to/opencv/folder)
-        - Run *mkdir build*, then *cd build*
-        - Run *cmake*
+	- Go to the opencv folder (cd path/to/opencv/folder)
+	- Run *mkdir build*, then *cd build*
+	- Run *cmake*
         	- Change the card arquitecture CUDA_ARCH_BIN (compute capability from step 2)
          	- Change the python folder path PYTHON_EXECUTABLE
           	- Change the cuda folder path CUDA_TOOLKIT_ROOT_DIR
