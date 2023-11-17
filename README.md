@@ -29,7 +29,7 @@ Now, we can proceed to compile the openCV source code in order for it to make so
 5. Create a docker container based on the nvidia docker image you selected
    - docker run --net=host --runtime=nvidia -it -v <path to folder in step 1>:/main_dir  <docker image> /bin/bash (Exr: nvidia/cuda:12.0.0-cudnn8-devel-ubuntu20.04) (Preferably use a docker image with CUDNN, otherwise you shall install it manually)
 6. Once the container is running you have to install:
-   - Python (Keep in mind to choose the python version you need):
+- Python (Keep in mind to choose the python version you need):
 	- apt-get update && apt-get install -y software-properties-common && rm -rf /var/lib/apt/lists/ && add-apt repository ppa:deadsnakes/ppa
 	- apt-get install -y python3.10 python3.10-dev libopencv-dev
 	- alias python=python3.10 && alias python3=python3.10
