@@ -39,7 +39,7 @@ Now, we can proceed to compile the openCV source code in order for it to make so
 	- Go to the opencv folder (cd path/to/opencv/folder)
 	- Run *mkdir build*, then *cd build*
 	- Run *cmake*
-        	- Change the card arquitecture CUDA_ARCH_BIN (compute capability from step 2)
+ 		- Change the card arquitecture CUDA_ARCH_BIN (compute capability from step 2)
          	- Change the python folder path PYTHON_EXECUTABLE
           	- Change the cuda folder path CUDA_TOOLKIT_ROOT_DIR
           	- Change the opencv contrib modules OPENCV_EXTRA_MODULES_PATH
