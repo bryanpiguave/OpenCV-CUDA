@@ -27,7 +27,8 @@ Now, we can proceed to compile the OpenCV source code in order for it to make so
 3. Go to [Docker hub](https://hub.docker.com/r/nvidia/cuda/tags) and choose a Nvidia Docker image matching your GPU requirements.
    - Be aware that there are different [types of images](https://hub.docker.com/r/nvidia/cuda), choose one that satisfies your project requirements.
 5. Create a Docker container based on the Nvidia Docker image you selected
-   - docker run --net=host --runtime=nvidia -it -v <path/to/folder/in/step1>:/main_dir  <Nvidia Docker image> /bin/bash (Ex: nvidia/cuda:12.0.0-cudnn8-devel-ubuntu20.04) (Preferably use a Docker image with CUDNN, otherwise you shall install it manually).
+   ``` docker run --net=host --runtime=nvidia -it -v <path/to/folder/in/step1>:/main_dir  <Nvidia Docker image> /bin/bash ```
+	(Ex: nvidia/cuda:12.0.0-cudnn8-devel-ubuntu20.04) (Preferably use a Docker image with CUDNN, otherwise you shall install it manually).
 6. Once the container is running you have to install:
 - Python (Keep in mind to choose the Python version you need):
 	- apt-get update && apt-get install -y software-properties-common && rm -rf /var/lib/apt/lists/ && add-apt repository ppa:deadsnakes/ppa
@@ -37,7 +38,7 @@ Now, we can proceed to compile the OpenCV source code in order for it to make so
 	- update-alternatives --config python3
 - Build OpenCV:
 	- Go to the OpenCV folder (cd path/to/opencv/folder)
-	- Run *mkdir build*, then *cd build*
+	- Run ```mkdir build```, then ```cd build```
 	- Run *cmake*
  		- Change the GPU arquitecture CUDA_ARCH_BIN (compute capability from step 2)
    		- Change the Python folder path PYTHON_EXECUTABLE
