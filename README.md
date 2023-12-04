@@ -1,13 +1,13 @@
 # OpenCV-CUDA
-How to copile OpenCV to use CUDA within a Docker image
+How to compile OpenCV to use CUDA within a Docker image
 
-In order to compile OpenCV to use CUDA we need to understand first how do C++ build process works:
+In order to compile OpenCV to use CUDA we need to understand first how the C++ build process works:
 
 ### Build Process (create an executable file)
-- **Preprocessing**: The preprocessor does many things: macro replacements, check for conditional compilation, insert content whenever a header file is being included. Only source files are passed to the preprocessor.
+- **Preprocessing**: The preprocessor does many things: macro replacements, check for conditional compilation, and insert content whenever a header file is included. Only source files are passed to the preprocessor.
 	- *input*: C++ source code
   	- *output*: file.ii
-- **Compiler (GCC: GNU COMPILER COLLECTION)**: Transforms the high level programming language to a low level one.
+- **Compiler (GCC: GNU COMPILER COLLECTION)**: Transforms the high-level programming language to a low-level one.
 	- *input*: file.ii (preprocessed file)
 	- *output (low level language)*: assembly code/file --> file.s
 - **Assembler**: Machine code representation of your source code.
@@ -20,9 +20,9 @@ In order to compile OpenCV to use CUDA we need to understand first how do C++ bu
 ## Generate Docker image with compiled OpenCV to use CUDA
 Now, we can proceed to compile the OpenCV source code in order for it to make some processes directly in a GPU.
 
-1. You need to create a folder to clone [OpenCV](https://github.com/opencv/opencv) and [OpenCV-contrib](https://github.com/opencv/opencv_contrib) repositories there (if their latest versions are too recent, I would suggest to try with the second to last)
+1. You need to create a folder to clone [OpenCV](https://github.com/opencv/opencv) and [OpenCV-contrib](https://github.com/opencv/opencv_contrib) repositories there (if their latest versions are too recent, I would suggest trying with the second to last)
 2. Check which GPU you have (run *nvidia-smi*) and its requirements.
-   - Here [CUDA-GPUS](https://developer.nvidia.com/cuda-gpus) you can find the compute capability of the card.
+   - Here [CUDA-GPUS](https://developer.nvidia.com/cuda-gpus) you can find the computing capability of the card.
    - Here [CUDA TOOLKIT, CUDA DRIVER AND CUDNN](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html#:~:text=For%20best%20performance%2C%20the%20recommended,was%20used%20for%20tuning%20heuristics.) you can find the supported versions regarding the GPU card.
 3. Go to [Docker hub](https://hub.docker.com/r/nvidia/cuda/tags) and choose a Nvidia Docker image matching your GPU requirements.
    - Be aware that there are different [types of images](https://hub.docker.com/r/nvidia/cuda), choose one that satisfies your project requirements.
@@ -39,7 +39,7 @@ Now, we can proceed to compile the OpenCV source code in order for it to make so
 	- Go to the OpenCV folder (cd path/to/opencv/folder)
 	- Run *mkdir build*, then *cd build*
 	- Run *cmake*
- 		- Change the GPU arquitecture CUDA_ARCH_BIN (compute capability from step 2)
+ 		- Change the GPU architecture CUDA_ARCH_BIN (compute capability from step 2)
    		- Change the Python folder path PYTHON_EXECUTABLE
 		- Change the CUDA folder path CUDA_TOOLKIT_ROOT_DIR
 		- Change the OpenCV contrib modules OPENCV_EXTRA_MODULES_PATH
